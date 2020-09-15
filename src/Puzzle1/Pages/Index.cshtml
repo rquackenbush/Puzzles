@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Puzzle 1";
+}
+
+<script language="javascript">
+    function solve() {
+        $.post("api/notify",
+            function (data) {
+                alert(data.message);
+            })
+            .fail(function () {
+                alert("Error!");
+            });
+    }
+</script>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Puzzle 1</h1>
+
+    You found it!
+    <br />
+    <br />
+
+    <button onclick="solve();">Solve</button>
+</div>

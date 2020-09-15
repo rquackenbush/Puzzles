@@ -1,0 +1,17 @@
+﻿# Example docker-compose file. Note that you'll have to fill in your own values.  
+
+version: "3.7"
+  services:
+    puzzle1:
+      image: puzzle1
+      ports:
+      - 82:80
+      environment:
+      - NOTIFICATION__SMTPSERVERADDRESS=smtp.gmail.com
+      - NOTIFICATION__USERNAME=YOURUSERNAME@gmail.com
+      - NOTIFICATION__PASSWORD=YOURPASSWORD
+      - NOTIFICATION__FROMEMAILADDRESS=YOURUSERNAME@gmail.com
+      - NOTIFICATION__TOEMAILADDRESS=YOURUSERNAME@gmail.com
+
+# Note that you'll have to turn on "Less secure app access" at https://www.google.com/settings
+# This isn't ideal. I don't like it damnit.
